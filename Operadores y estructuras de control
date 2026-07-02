@@ -1,0 +1,126 @@
+"""
+OPERADORES
+"""
+
+#operadores aritmeticos
+print(f"Suma: 10 + 3 = {10+3}") #usamos la f para interpolar (meter una función dentro)
+print(f"Resta: 10 - 3 = {10-3}")
+print(f"multiplicación: 10 * 3 = {10*3}")
+print(f"división: 10 / 3 = {10/3}")
+print(f"modulo: 10 % 3 = {10%3}") #residuo de la división entera
+print(f"exponente: 10 ** 3 = {10**3}")
+print(f"división entera: 10 // 3 = {10//3}") #resultado entero de la división
+
+#operadores de comparación
+print(f"igualdad: 10 == 3 es {10==3}") #da en boleanos
+print(f"desigualdad: 10 != 3 es {10!=3}")
+print(f"mayor que: 10 > 3 es {10>3}")
+print(f"menor que: 10 < 3 es {10<3}")
+print(f"menor o igual que: 10 <= 3 es {10<=3}")
+print(f"mayor o igual que: 10 >= 3 es {10>=3}")
+
+#operadores logicos
+print(f"AND: 10 + 3 == 13 and 5 - 1 == 4 es {10+3==13 and 5-1==4}") #and dos valores 1 = True
+print(f"OR: 10 + 3 == 13 and 5 - 1 == 7 es {10+3==13 or 5-1==7}") #or con que uno sea 1 = True
+print(f"NOT: 10 + 3 == 13 es {not 10+3==13}") #not invierte el valor
+
+#operadores de asignación
+numero = 11 #asignas un valor a la variable
+print (numero)
+numero += 1 #asignas una suma al valor de la variable
+print (numero) 
+numero -= 1 #asignas una resta al valor de la variable
+print (numero)
+#así se pueden asignar todos los operadores aritmeticos posibles ya vistos
+#le va haciendo las operaciones asignadas a los valores preestablecidos de la variable
+numero /= 2
+print (numero) #es 5.5
+
+#operadores de identidad
+otro_number = 5.5
+print (f"numero is otro_number es {numero is otro_number}")
+#aunque los dos valores sean iguales, da false por que tienen otra dirección de guardado
+'''
+este fenómeno tiende a no pasar cuando los valores son definidos manualmente por que se reutilizan en
+la misma parte de la memoria diferente a cuando se altera el valor de una por medio de operadores
+'''
+a = 10 
+a /= 10 #se altera
+print (a)
+b=1.0
+print (f"{a is b}") #igualdad
+print (f"{a is not b}") #desigualdad
+
+#operadores de pertenencia
+print (f"'u' in 'leoncito' {'u' in 'leoncito'}") #aquí nos dice si un simbolo pertenece a un conjunto
+print (f"'u' not in 'leoncito' {'u' not in 'leoncito'}")
+
+#operadores de bit 
+ab = 10 #en binario es 1010
+bb = 3 #en binario es 0011
+print (f" AND: ab & bb es {ab & bb}") #hace bit a bit las comparaciones a fin de crear un nuevo numero
+print (f" OR: ab | bb es {ab | bb}")
+print (f" XOR: ab ^ bb es {ab ^ bb}")
+print (f" NOT: ab es {~ab}") #hace una inversión a todos los bits
+print (f" Desplazamiento a la derecha: bb >> 3 es {bb >> 3}") # los bits avanzan un numero de veces
+print (f" Desplazamiento a la izquierda: bb << 3 es {bb << 3}")
+
+"""
+ESTRUCTURAS DE CONTROL
+"""
+#condicionales
+my_variable = "Soy leoncito"
+print (my_variable)
+if my_variable == "Soy leoncito": #es una condición a cumplir para imprimir algo en este caso 
+  print ("hola Leo!")
+elif my_variable == "Soy leoncito!": #aquí se abre otra condicional si no se cumple la primera
+  print ("Que buena actitud!") 
+else: 
+  print ("no eres Leo :(")
+
+#iterativas
+for i in range (6): #es para recorrer algo sabido en una secuencia, por ejemplo un rango numérico
+  print (i)
+
+z=1
+while z<6: #aquí usamos while como bucle el cual se ajusta a instrucciones dadas
+  print (z) #si el número es menor a 6 se va a seguir imprimiendo
+  z += 1 #aquí se le aumenta uno cada vez que el bucle se repite
+'''
+> python siempre va recorriendo de arriba a abajo, quedandonos esta interpretación:
+Ok, z es uno 
+si z es menor a seis...
+  imprimo z 
+  y le aumento uno
+> esos espacios son las instrucciones dentro de la función, por eso se sabe que repetir
+'''
+
+#manejo de excepciones
+try: #intentar una acción
+  print (f"{10/0}")
+except:
+  print ("Opps! algo ha salido mal!") #en caso de ejecutar una orden que pete el sistema
+finally:
+  print ("Se ha finalizado el proceso") #en ambos casos poner al final (opcional)
+
+for l in range (20):
+	if l % 2 == 0 and l != 12 and l != 14 and l % 3 !=0:
+		print (l)
+
+Edad = 15
+try:
+	if type (Edad) == int or float:
+		if Edad >= 18:
+			print ("Eres un adulto legal") 
+		elif Edad >= 16:
+			print ("Puedes abrir una cuenta bancaria")
+		elif 10 <= Edad < 18:
+			print ("Eres un adolescente")
+		elif Edad < 10:
+			print ("No has vivido tu primera decada pequeño")
+		elif Edad < 18:
+			print ("Eres menor de edad según las leyes nacionales")
+	else:
+		print ("datos no validos")
+except:
+	print ("datos no validos")
